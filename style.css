@@ -3,6 +3,7 @@
 --color-1:#000000;
 --color-1-lt:#000000a9;
 --color-2:#ffffffe1;
+--color-2-dark:#f1f1f1d1;
 --color-3:#FD9797;
 --color-4:#D04343;
 --color-5:#59482B;
@@ -38,6 +39,53 @@ ul{
 section{
     padding: 7.5rem 0;
 }
+.btn{
+     color: var(--color-1-lt);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    display: inline-block;
+    width: fit-content;
+    padding: 0.6rem 2rem;
+    background-color: var(--color-1-lt);
+    color: var(--color-2);
+    gap: 1rem;
+    border-radius: 0.2rem;
+    border: none;
+    text-align: center;
+}
+.btn-view-all{
+    margin: 2rem auto 0 auto;
+}
+.filter-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.filter-btns button{
+    border: none;
+    color: var(--color-1-lt);
+    font-size: 2.2;
+    background-color: transparent;
+    cursor: pointer;
+}
+.filter-btns button.active{
+    background-color: var(--color-1-lt);
+    color: var(--color-2);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    display: inline-block;
+    width: fit-content;
+    padding: 0.6rem 2rem;
+    border-radius: 0.2rem;
+    border: none;
+    text-align: center;
+}
+.filter-btns button:focus{
+    outline: none;
+    border: none;
+}
 .wrapper{
     max-width: 75rem;
     margin: 0 auto;
@@ -47,9 +95,119 @@ section{
     display:flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
 }
 .flex-col{
     flex: 1;
+}
+.grid-row{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+.section-header{
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-1-lt);
+    margin-bottom: 4.5rem;
+    text-transform: capitalize;
+}
+.card{
+    box-shadow: 0 0 0.3rem var(--color-3);
+    padding: 1.6rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition: .3s ease-in-out;
+}
+.card .card-img{
+    width: 10rem;
+    height: auto;
+    border: 1px solid gainsboro;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+.card .card-header{
+font-weight: 600;
+margin-bottom: 1rem;
+font-size: 1.7rem;
+}
+.card .card-body{
+    color: var(--color-1-lt);
+}
+.card:hover{
+    background-color: var(--color-4);
+    color: var(--color-2)!important;
+}
+.card:hover .card-body,
+.card:hover .card-header{
+    color: var(--color-2)!important;
+}
+.product-card{
+    box-shadow: 0 0 0.3rem var(--color-3);
+    padding: 1.6rem;
+    border-radius: 0.4rem;
+    transition: .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem; 
+}
+.product-card .product-preview-info{
+    position: relative;
+    cursor: pointer;
+}
+.product-card .product-preview-info .product-priview{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.694);
+    height: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+
+    
+}
+.product-card .product-preview-info:hover .product-priview{
+    height: 100%;
+}
+.product-card .product-preview-info .preview-btn{
+background-color: transparent;
+padding: .5rem 2rem;
+border: 0.01rem solid var(--color-2);
+color: var(--color-2);
+font-size: 1.2rem;
+cursor: pointer;
+text-align: center;
+border-radius: 2rem;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+transition: .3s ease-in-out;
+}
+.product-card .product-preview-info .cart-btn{
+background-color: transparent;
+padding: .5rem 2.5rem;
+border: 0.01rem solid var(--color-2);
+color: var(--color-2);
+font-size: 1.2rem;
+cursor: pointer;
+border-radius: 2rem;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+transition: .3s ease-in-out;
+}
+.product-card .product-preview-info .cart-btn:hover,
+.product-card .product-preview-info .preview-btn:hover{
+    background-color: var(--color-2);
+    color: var(--color-1-lt);
 }
 /* end of reusable styles */
 header{
@@ -125,6 +283,9 @@ max-width: 31.25rem;
     font-weight: 600;
     margin-bottom: 0.7rem;
 }
+.hero .flex-row .flex-col img{
+    border-radius: 0.35rem;
+}
 .hero .hero-text .hero-title span{
     color: var(--color-4);
 }
@@ -176,3 +337,11 @@ max-width: 31.25rem;
 
 }
 /* styling why choose us */
+.why-choose-us{
+   
+}
+
+/* styling featured-section */
+.featured-section{
+    background-color: var(--color-2-dark);
+}
